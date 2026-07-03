@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto X - Cumpleaños Christian & Carol</title>
+
+    <!-- FAVICON EN SVG: Cara de Creeper de Minecraft (Inmune a bloqueos) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'><rect width='8' height='8' fill='%2355FF55'/><rect x='1' y='2' width='2' height='2' fill='%23000000'/><rect x='5' y='2' width='2' height='2' fill='%23000000'/><rect x='3' y='4' width='2' height='3' fill='%23000000'/><rect x='2' y='5' width='1' height='2' fill='%23000000'/><rect x='5' y='5' width='1' height='2' fill='%23000000'/></svg>"
+    />
+
+    <!-- Tipografía estilo pixel/Minecraft -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Vinculación del CSS externo -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- CONTADOR REGRESIVO (NUEVO) -->
+    <div class="container countdown-container">
+      <h3>TIEMPO PARA EL LANZAMIENTO:</h3>
+      <div id="countdown" class="countdown-timer">Cargando chunks...</div>
+    </div>
+
+    <!-- CABECERA DE LA INVITACIÓN -->
+    <div class="container">
+      <h1>¡INVITACIÓN!</h1>
+      <p class="subtitle">CUMPLEAÑOS DE:</p>
+      <h2>CHRISTIAN & CAROL</h2>
+      <hr class="mc-hr" />
+      <p>📆 FECHA: 18 DE JULIO</p>
+      <p>⏰ HORA: 10:00 PM</p>
+      <p class="tnt-text">💣 DRESS CODE: TNT (ROJO)</p>
+    </div>
+
+    <!-- 1. CONTADOR TEAM CAROL O TEAM CHRISTIAN -->
+    <div class="container">
+      <h3>¿A QUÉ TEAM PERTENECES?</h3>
+      <p class="helper-text">(Solo puedes elegir una vez)</p>
+
+      <div class="team-flex">
+        <div>
+          <button class="mc-btn" id="btnChristian" onclick="votar('christian')">
+            TEAM CHRISTIAN
+          </button>
+          <p class="team-gift gift-alcohol">🍻 Trae: Alcohol</p>
+        </div>
+        <div>
+          <button class="mc-btn" id="btnCarol" onclick="votar('carol')">
+            TEAM CAROL
+          </button>
+          <p class="team-gift gift-squishy">🧸 Trae: Squishy</p>
+        </div>
+      </div>
+
+      <div class="scoreboard">
+        <p>Marcador Actual:</p>
+        <p>
+          Christian: <span id="countChristian" class="score-num">0</span> |
+          Carol: <span id="countCarol" class="score-num">0</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. REGISTRO DE ASISTENCIA Y PARTICIPANTES -->
+    <div class="container">
+      <h3>CONFIRMAR ASISTENCIA</h3>
+      <input
+        type="text"
+        id="guestName"
+        class="mc-input"
+        placeholder="Escribe tu Nickname de Minecraft"
+      />
+
+      <div class="action-buttons">
+        <button class="mc-btn" onclick="registrarAsistencia(true)">
+          ¡SÍ ASISTIRÉ! 👍
+        </button>
+        <button class="mc-btn" onclick="registrarAsistencia(false)">
+          NO ASISTIRÉ ❌
+        </button>
+      </div>
+
+      <div id="yapeAlert" class="yape-panel hidden">
+        <p class="yape-text">
+          ¡Oh, no! Te extrañaremos. Deja tu regalo por Yape al número:
+        </p>
+        <p class="yape-number">936 104 324</p>
+      </div>
+
+      <h3 class="participants-title">PARTICIPANTES DEL PROYECTO X:</h3>
+      <div class="list-box" id="listaParticipantes">
+        <div class="list-empty">Nadie registrado aún...</div>
+      </div>
+    </div>
+
+    <!-- 3. UBICACIÓN INTERACTIVA EN MAPS -->
+    <div class="container" style="margin-bottom: 120px">
+      <h3>📍 MAPA DEL SPAWN</h3>
+      <button class="mc-btn" onclick="toggleMapa()">VER UBICACIÓN</button>
+
+      <div id="mapaBox" class="map-container hidden">
+        <!-- URL de inserción oficial y exacta para Huari 636, Lima -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.691763172085!2d-77.0141963!3d-12.0508314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8a89c65dfa1%3A0x3da331f3f6ef9ab7!2sHuari%20636%2C%20Lima%2015003!5e0!3m2!1ses!2spe!4v1719880000000!5m2!1ses!2spe"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </div>
+
+    <!-- EL INVENTARIO / HOTBAR (NUEVO) -->
+    <div class="hotbar-wrapper">
+      <div class="hotbar">
+        <div class="slot" id="slot-0"></div>
+        <div class="slot" id="slot-1"></div>
+        <div class="slot" id="slot-2"></div>
+        <div class="slot" id="slot-3"></div>
+        <div class="slot" id="slot-4"></div>
+        <div class="slot" id="slot-5"></div>
+        <div class="slot" id="slot-6"></div>
+        <div class="slot" id="slot-7"></div>
+        <div class="slot" id="slot-8"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

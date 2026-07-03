@@ -1,0 +1,282 @@
+:root {
+    --mc-button: #7c7c7c;
+    --mc-button-hover: #5c8e32; /* Verde pasto Minecraft */
+    --mc-border-light: #aeaeae;
+    --mc-border-dark: #373737;
+    --mc-bg: #2c1a11; /* Bloque de tierra oscuro */
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    background-color: var(--mc-bg);
+    background-image: url('https://www.transparenttextures.com/patterns/black-thread.png'); /* Simulación de textura pixelada */
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 2px 2px #000;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    background: #4a3b32; /* Color bloque de madera/tierra */
+    border: 4px solid #000;
+    padding: 20px;
+    box-shadow: inset -4px -4px var(--mc-border-dark), inset 4px 4px var(--mc-border-light);
+    text-align: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: #ffff55; /* Amarillo de interfaz */
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    color: #55ffff; /* Cyan de comandos */
+}
+
+.mc-hr {
+    border: 2px solid #000;
+    margin: 15px 0;
+}
+
+.tnt-text {
+    color: #ff5555; /* Rojo TNT */
+}
+
+.helper-text {
+    font-size: 10px; 
+    color: #aaa;
+}
+
+.team-flex {
+    display: flex; 
+    justify-content: space-around; 
+    margin: 20px 0;
+}
+
+.team-gift {
+    font-size: 11px;
+}
+
+.gift-alcohol {
+    color: #ffaa00;
+}
+
+.gift-squishy {
+    color: #ff55ff;
+}
+
+/* Marcador */
+.scoreboard {
+    font-size: 12px; 
+    margin-top: 15px; 
+    background: #222; 
+    padding: 10px; 
+    border: 2px solid #000;
+}
+
+.score-num {
+    color: #55ff55;
+}
+
+/* Botones Estilo Minecraft */
+.mc-btn {
+    background-color: var(--mc-button);
+    border: 3px solid #000;
+    box-shadow: inset -3px -3px var(--mc-border-dark), inset 3px 3px var(--mc-border-light);
+    color: #e0e0e0;
+    padding: 12px 20px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 10px;
+    image-rendering: pixelated;
+}
+
+.mc-btn:hover {
+    background-color: var(--mc-button-hover);
+    color: #fff;
+    box-shadow: inset -3px -3px #3e6321, inset 3px 3px #89c15d;
+}
+
+.mc-btn:disabled {
+    background-color: #555;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Inputs de texto estilo terminal */
+.mc-input {
+    background-color: #000;
+    border: 3px solid var(--mc-border-light);
+    color: #55ff55;
+    padding: 10px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    width: calc(100% - 30px);
+    margin-bottom: 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.action-buttons {
+    margin-bottom: 15px;
+}
+
+/* Panel de Yape */
+.yape-panel {
+    background: #ff5555; 
+    padding: 10px; 
+    margin-top: 15px; 
+    border: 3px solid #000;
+}
+
+.yape-text {
+    font-size: 11px; 
+    margin: 0;
+}
+
+.yape-number {
+    font-size: 14px; 
+    color: #ffff55; 
+    margin: 5px 0;
+}
+
+/* Listas de Participantes */
+.participants-title {
+    margin-top: 30px;
+}
+
+.list-box {
+    background: #1e1e1e;
+    border: 3px solid #000;
+    padding: 15px;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.list-item {
+    padding: 8px 0;
+    border-bottom: 2px dashed #333;
+    font-size: 11px;
+}
+
+.list-empty {
+    color: #aaa; 
+    text-align: center;
+    font-size: 11px;
+}
+
+/* Estado oculto */
+.hidden {
+    display: none !important;
+}
+
+/* Contenedor del Mapa */
+.map-container {
+    width: 100%;
+    height: 250px;
+    border: 4px solid #000;
+    margin-top: 15px;
+    background-color: #75a443;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- NUEVOS ESTILOS DE GAMIFICACIÓN --- */
+
+/* Countdown */
+.countdown-container {
+    background: #141414;
+    border: 4px solid #333;
+}
+.countdown-timer {
+    color: #ffaa00;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+/* Lista de Participantes con Skin */
+.list-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-bottom: 2px solid #333;
+}
+.skin-head {
+    width: 24px;
+    height: 24px;
+    image-rendering: pixelated;
+    border: 2px solid #000;
+    background: #555;
+}
+
+/* La Hotbar de Minecraft fija abajo */
+.hotbar-wrapper {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px;
+    border: 4px solid #4a4a4a;
+    border-top-color: #8b8b8b;
+    border-left-color: #8b8b8b;
+    z-index: 999;
+}
+
+.hotbar {
+    display: flex;
+    background: #8f8f8f;
+    border: 4px solid #3c3c3c;
+    border-top-color: #dbdbdb;
+    border-left-color: #dbdbdb;
+    gap: 4px;
+    padding: 2px;
+}
+
+
+.slot {
+    width: 44px;
+    height: 44px;
+    background: #8b8b8b;
+    border: 4px solid #373737;
+    border-top-color: #555555;
+    border-left-color: #555555;
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Íconos dentro del inventario */
+.item-icon {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+/* Animación de obtención de ítem */
+@keyframes itemSpawn {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+.animate-item {
+    animation: itemSpawn 0.4s ease-out forwards;
+}
